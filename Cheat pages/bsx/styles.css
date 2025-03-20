@@ -1,0 +1,352 @@
+/*********************************
+  1) RESET & BODY
+*********************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: "Fredoka", sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: left;
+}
+
+/*********************************
+  2) HEADER & NAV
+*********************************/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  padding: 20px 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/*********************************
+  3) HERO / PRESENTATION
+*********************************/
+.presentation {
+  background: linear-gradient(to bottom, #000, #1f1f7a);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-top: 80px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  flex: 1;
+}
+.logo {
+  margin-left: 60px;
+  margin-right: 30px;
+}
+.bsx-title {
+  font-size: 6rem;
+  margin: 0;
+}
+.subtitle {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+/* Buttons */
+.buy-button,
+.learn-more-button {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.buy-button {
+  background-color: #fff;
+  color: #000;
+  margin-right: 10px;
+}
+.learn-more-button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.learn-more-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+.hero-image img {
+  width: 550px;
+  height: auto;
+  margin-left: -70px;
+}
+
+/*********************************
+  4) CHEAT SECTION (SNAP #2)
+*********************************/
+.cheat-section {
+  background: linear-gradient(to bottom, #1f1f7a, #ff6f61);
+  height: 100vh;
+  overflow-y: auto;
+  padding-top: 160px;
+  padding-bottom: 60px;
+}
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.module {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  margin: 0 auto 3rem auto;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+.module.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.module-left {
+  flex-direction: row;
+}
+.module-right {
+  flex-direction: row-reverse;
+}
+.module-text {
+  flex: 1;
+  margin-top: 60px;
+}
+.module-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.module-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.module-image {
+  flex: 1;
+}
+.module-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/*********************************
+  5) GLASS CONTAINER
+*********************************/
+.glass-container {
+  max-width: 1200px;
+  width: calc(100% - 40px);
+  margin: 40px auto 60px auto;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+}
+.glass-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/*********************************
+  6) ANIMATED PHONE, SHIELD, & SYRINGUILLA
+*********************************/
+.phone-shield-container {
+  position: relative;
+  width: 240px;
+  height: 460px;
+  margin: 20px auto;
+}
+
+/* PHONE MOVEMENT: slides right */
+.phone {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  background: #222;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  margin: auto;
+  overflow: hidden;
+  z-index: 2;
+  animation: phoneMove 1s forwards;
+  animation-delay: 1s;
+}
+@keyframes phoneMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
+/* GREEN liquid injection for Brawl Stars box – fills from left to right */
+.brawl-stars {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 50px;
+  border: 2px solid #ff6f61;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.brawl-stars .liquid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #0f0;
+  opacity: 0.7;
+  animation: fillLiquid 1s forwards;
+  animation-delay: 3s;
+}
+@keyframes fillLiquid {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.brawl-stars .brawl-text {
+  position: relative;
+  z-index: 2;
+  color: #ff6f61;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  line-height: 50px;
+}
+
+/* Refined shield shape */
+.shield {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 150px;
+  background: linear-gradient(135deg, #6a0dad, #a4508b);
+  clip-path: polygon(50% 0%, 100% 30%, 85% 70%, 50% 100%, 15% 70%, 0% 30%);
+  z-index: 2;
+}
+
+/* PROMON box with rounder edges (stays unfilled) */
+.promon {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6f61;
+  background: #222;
+  border: 2px solid #ff6f61;
+  border-radius: 10px;
+  padding: 5px 10px;
+  z-index: 3;
+}
+
+/* The refined syringe (“jeringuilla”) that slides in to touch the phone */
+.syringe {
+  position: absolute;
+  top: 50%;
+  left: -100px;  /* start off-screen */
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: syringeEnter 1s forwards;
+  animation-delay: 2s;
+}
+@keyframes syringeEnter {
+  0% { left: -100px; opacity: 0; }
+  100% { left: 80px; opacity: 1; }
+}
+.syringe-barrel {
+  width: 40px;
+  height: 80px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+.syringe-needle {
+  position: absolute;
+  top: 50%;
+  right: -20px; /* needle extends 20px past the barrel */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 4px;
+  background: #ccc;
+}
+.syringe-needle::after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+/*********************************
+  7) RESPONSIVE TWEAKS
+*********************************/
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .hero-image img {
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 80%;
+  }
+  .bsx-title {
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  .module {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}

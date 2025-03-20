@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>BSX Snap + Modules (Final)</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO / PRESENTATION SECTION (snap #1) -->
+  <div class="presentation" id="presentation-section">
+    <div class="container">
+      <main class="content">
+        <!-- LEFT: Text -->
+        <div class="logo">
+          <h1 class="bsx-title">BSX</h1>
+          <p class="subtitle">No1 Brawl Stars Cheats</p>
+          <div>
+            <button class="buy-button" style="margin-right: 10px;">Buy Now</button>
+            <button class="learn-more-button" onclick="scrollToContent()">Learn more &gt;</button>
+          </div>
+        </div>
+        <!-- RIGHT: Overlapping Hero Image (bsx-max.png) -->
+        <div class="hero-image">
+          <img src="assets/bsx-max.png" alt="Hero Overlap" />
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  </div>
+  <!-- END HERO -->
+
+  <!-- CHEAT SECTION (snap #2) with internal scrolling & 3 modules -->
+  <div class="cheat-section" id="cheat-section">
+    <h2 class="section-title">Modules</h2>
+
+    <!-- MODULE 1: image on the LEFT, text on the RIGHT -->
+    <div class="module module-right">
+      <div class="module-text">
+        <h2>Module 1</h2>
+        <p>This module has the image on the left and text on the right.</p>
+      </div>
+      <div class="module-image">
+        <img src="assets/image1.png" alt="Module 1" />
+      </div>
+    </div>
+    
+    <!-- MODULE 2: image on the RIGHT, text on the LEFT -->
+    <div class="module module-right">
+      <div class="module-image">
+        <img src="assets/image1.png" alt="Module 2" />
+      </div>
+      <div class="module-text">
+        <h2>Module 2</h2>
+        <p>This module has the image on the right and text on the left.</p>
+      </div>
+    </div>
+    
+    <!-- MODULE 3: image on the LEFT, text on the RIGHT -->
+    <div class="module module-right">
+      <div class="module-text">
+        <h2>Module 3</h2>
+        <p>This module has the image on the left and text on the right.</p>
+      </div>
+      <div class="module-image">
+        <img src="assets/image1.png" alt="Module 3" />
+      </div>
+    </div>
+
+    <!-- GLASS CONTAINER with ANIMATED PHONE, SHIELD, PROMON & SYRINGUILLA -->
+    <div class="glass-container">
+      <h2>Stay undetected</h2>
+      <div class="phone-shield-container">
+        <!-- PHONE element containing shield, PROMON and the Brawl Stars box -->
+        <div class="phone">
+          <!-- A refined shield (purely decorative) -->
+          <div class="shield"></div>
+          <!-- PROMON box (remains unchanged) -->
+          <div class="promon">PROMON</div>
+          <!-- Brawl Stars box, which will be filled with green liquid -->
+          <div class="brawl-stars">
+            <!-- The liquid element fills the brawl-stars box from left to right -->
+            <div class="liquid"></div>
+            <span class="brawl-text">Brawl Stars</span>
+          </div>
+        </div>
+        <!-- The refined syringe (“jeringuilla”) that will slide in and touch the phone -->
+        <div class="syringe">
+          <div class="syringe-barrel"></div>
+          <div class="syringe-needle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT for Snap + IntersectionObserver -->
+  <script src="script.js"></script>
+</body>
+</html>
